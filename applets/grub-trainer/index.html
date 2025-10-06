@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grub Arithmetic 1</title>
+  <link rel="icon" type="image/png" href="assets/images/grub_icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Mode Selection Screen -->
+  <div id="mode-screen" class="screen active">
+    <h1>Grub Arithmetic Trainer</h1>
+    <div class="mode-buttons">
+      <button id="practice-btn" class="mode-btn">Practice Mode</button>
+      <button id="steel-grub-btn" class="mode-btn">Steel-Grub Mode</button>
+    </div>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen">
+    <div class="header">
+      <div id="timer-display" class="timer-display">0:00</div>
+      <label class="mute-toggle">
+        <input type="checkbox" id="mute-checkbox" class="toggle-checkbox">
+        <span class="toggle-slider"></span>
+        <span class="toggle-label">Mute</span>
+      </label>
+    </div>
+
+    <div id="progress-bar" class="progress-bar"></div>
+
+    <div class="problem-area">
+      <div id="problem-display" class="problem-display"></div>
+      <input type="text" id="answer-input" class="answer-input" autocomplete="off" inputmode="numeric">
+    </div>
+  </div>
+
+  <!-- Results Screen -->
+  <div id="results-screen" class="screen">
+    <div id="results-content"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
