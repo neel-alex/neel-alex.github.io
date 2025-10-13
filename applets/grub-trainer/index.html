@@ -11,9 +11,22 @@
   <!-- Mode Selection Screen -->
   <div id="mode-screen" class="screen active">
     <h1>Grub Arithmetic Trainer</h1>
-    <div class="mode-buttons">
+    <p class="intro-text">46 grubs have been trapped! For some weird but diegetically-plausible reason, you can only save them by solving math problems!</p>
+
+    <div class="mode-section">
       <button id="practice-btn" class="mode-btn">Practice Mode</button>
+      <select id="practice-count" class="practice-dropdown">
+        <option value="5">5 problems</option>
+        <option value="10" selected>10 problems</option>
+        <option value="20">20 problems</option>
+        <option value="46">46 problems</option>
+      </select>
+      <p class="mode-description">Practice saving the grubs! In this mode, you'll be shown some math problems, but there's no penalty to failing. You'll get to see a full report on your progress at the end.</p>
+    </div>
+
+    <div class="mode-section">
       <button id="steel-grub-btn" class="mode-btn">Steel-Grub Mode</button>
+      <p class="mode-description">Go out into the world and save the grubs for yourself! Careful though, if you make one mistake, the Collector will seize on your error and trap them again! Still, if you save them all, and manage to do it fast enough, there's a special reward at the end...</p>
     </div>
   </div>
 

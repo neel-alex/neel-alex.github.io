@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #8fb899 0%, #6b9177 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -36,15 +36,60 @@ body {
 
 #mode-screen h1 {
   font-size: 3em;
-  margin-bottom: 40px;
-  color: #764ba2;
+  margin-bottom: 20px;
+  color: #3d7a4a;
 }
 
-.mode-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+.intro-text {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.mode-section {
+  margin-bottom: 30px;
+}
+
+.mode-description {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #666;
+  max-width: 600px;
+  margin: 15px auto 0;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.practice-dropdown {
+  display: block;
+  margin: 10px auto 0;
+  font-size: 1em;
+  padding: 10px 20px;
+  border: 2px solid #7db88a;
+  border-radius: 8px;
+  background: white;
+  color: #3d7a4a;
+  font-weight: normal;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s;
+  width: 200px;
+}
+
+.practice-dropdown:hover {
+  border-color: #5ba86d;
+  background: #f0f7f2;
+}
+
+.practice-dropdown:focus {
+  border-color: #3d7a4a;
+  background: #f0f7f2;
+}
+
+.practice-dropdown option {
+  background: white;
+  color: #333;
 }
 
 .mode-btn {
@@ -52,7 +97,7 @@ body {
   font-size: 1.5em;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #5ba86d 0%, #3d7a4a 100%);
   color: white;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -81,7 +126,7 @@ body {
 .timer-display {
   font-size: 1.5em;
   font-weight: bold;
-  color: #764ba2;
+  color: #3d7a4a;
 }
 
 /* iOS-style toggle */
@@ -123,7 +168,7 @@ body {
 }
 
 .toggle-checkbox:checked + .toggle-slider {
-  background: #764ba2;
+  background: #3d7a4a;
 }
 
 .toggle-checkbox:checked + .toggle-slider::before {
@@ -136,15 +181,25 @@ body {
 
 /* Progress Bar */
 .progress-bar {
-  display: grid;
-  grid-template-columns: repeat(23, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 40px;
   align-items: center;
+  justify-content: center;
+}
+
+.progress-bar-46 {
+  gap: 2px;
+  max-width: calc(23 * 30px + 22 * 2px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .progress-circle {
-  aspect-ratio: 1;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
   border: 2px solid #ddd;
   border-radius: 50%;
   background: white;
@@ -211,7 +266,7 @@ body {
 .problem-display {
   font-size: 4em;
   font-weight: bold;
-  color: #764ba2;
+  color: #3d7a4a;
   margin-bottom: 40px;
   min-height: 80px;
 }
@@ -219,7 +274,7 @@ body {
 .answer-input {
   font-size: 2em;
   padding: 15px 30px;
-  border: 3px solid #667eea;
+  border: 3px solid #5ba86d;
   border-radius: 10px;
   text-align: center;
   width: 300px;
@@ -229,7 +284,7 @@ body {
 }
 
 .answer-input:focus {
-  border-color: #764ba2;
+  border-color: #3d7a4a;
 }
 
 .answer-input.correct-flash {
@@ -241,12 +296,12 @@ body {
 }
 
 @keyframes correct-flash {
-  0%, 100% { border-color: #667eea; }
+  0%, 100% { border-color: #5ba86d; }
   50% { border-color: #22c55e; background: #d1fae5; }
 }
 
 @keyframes incorrect-flash {
-  0%, 100% { border-color: #667eea; }
+  0%, 100% { border-color: #5ba86d; }
   50% { border-color: #ef4444; background: #fee2e2; }
 }
 
@@ -270,8 +325,39 @@ body {
 
 .results-header h2 {
   font-size: 2.5em;
-  color: #764ba2;
+  color: #3d7a4a;
   margin-bottom: 20px;
+}
+
+.perfect-message {
+  font-size: 1.2em;
+  color: #3d7a4a;
+  font-weight: 600;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+.encouragement-message {
+  font-size: 1.1em;
+  color: #666;
+  margin-top: 15px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.completion-message {
+  font-size: 1.2em;
+  color: #555;
+  margin-top: 30px;
+  line-height: 1.6;
+}
+
+.hint-message {
+  font-size: 0.95em;
+  color: #888;
+  margin-top: 8px;
+  line-height: 1.5;
+  font-style: italic;
 }
 
 .results-summary {
@@ -286,7 +372,7 @@ body {
 
 .ticket {
   background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-  border: 4px dashed #764ba2;
+  border: 4px dashed #3d7a4a;
   padding: 40px;
   text-align: center;
   border-radius: 15px;
@@ -296,7 +382,7 @@ body {
 .ticket h3 {
   font-size: 2em;
   margin-bottom: 20px;
-  color: #764ba2;
+  color: #3d7a4a;
 }
 
 .ticket p {
@@ -309,7 +395,7 @@ body {
   font-size: 1.2em;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #5ba86d 0%, #3d7a4a 100%);
   color: white;
   cursor: pointer;
   margin: 10px;
@@ -327,7 +413,7 @@ body {
 .detailed-breakdown h3 {
   font-size: 1.8em;
   margin-bottom: 20px;
-  color: #764ba2;
+  color: #3d7a4a;
 }
 
 .problem-row {
@@ -344,7 +430,7 @@ body {
 
 .problem-row.header {
   font-weight: bold;
-  background: #667eea;
+  background: #5ba86d;
   color: white;
   border-radius: 8px 8px 0 0;
 }
